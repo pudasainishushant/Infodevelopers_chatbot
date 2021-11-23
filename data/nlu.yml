@@ -1,0 +1,466 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: after_greet
+  examples: |
+    - how are you?
+    - hi, how are you?
+    - hey, how you doing?
+    - how u doing?
+    - are you fine?
+    - hey, are you fine?
+    - good morning, are you fine?
+    - are you ok?
+    - hey buddy, how are you?
+    - hi, there is everything going fine?
+    - are you allright?
+    - how healthy are you?
+    - how is your mood?
+    - how are you feeling today?
+    - can you tell me how are you feeling?
+    - how are you
+- intent: thank_you
+  examples: |
+    - thank you
+    - thanks
+    - thanks a lot buddy
+    - thank you for your services
+    - i am very happy for you servcies. thank you
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: about_this_chatbot
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - what is this system for
+    - tell me about you
+    - what can you do
+    - what is your job
+    - why are you made
+    - what are you
+    - what is this
+    - about yourself
+    - speak about you
+    - tell us about yourself
+    - about you
+    - can you tell us about your duty
+    - i want to know what is your job
+    - i want you to tell about yourself
+    - what is this chatbot
+    - is this a chatbot?
+    - what type of chatbot are you
+    - hey man are you a virtual assistant
+    - hi are you a chatbot
+    - are you a chatbot
+    - are you a person
+    - is this a person or a bot
+- intent: out_of_scope
+  examples: |
+    - I can't get enough information.
+    - You are useless
+    - This does not work
+    - what the fuck is going on?
+    - What is wrong with this universe?
+    - capital city of nepal
+    - What is wrong these days?
+    - I am so tired
+    - I don't want to chat in this bot.
+    - This chatbot is not good.
+    - Why so high interest rate?
+    - This company is fraud.
+    - play game
+    - fuck you
+    - asshole
+    - you bitch
+    - bitch
+    - fucking shit
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - you piece of shit
+    - oov oov oov
+    - haahah hahaha
+    - what is the power of earth
+    - what is the size of moon
+    - tell me a joke
+    - sing me a song
+    - i want to hear a story
+    - what is your salary
+    - show me the map of Nepal
+    - show me the places to visit
+    - lets play a game
+    - who will win the euro cup
+    - blasbdfsd blfbsdlfbl sdbf
+    - oov oov
+    - oov
+    - fsdfsdf
+    - aaaaaaa
+- intent: about_infodev
+  examples: |
+    - what is infodevelopers
+    - can you tell me about infodevelop
+    - what is infodevelopersabout
+    - what do infodevelopers do
+    - what is the job of infodevelopers
+    - describe about infodevelopers
+    - about infodevelop
+    - about infodevelopers
+    - i want to know about infodevelopers
+    - tell me about the infodevelop
+    - would you tell us about what infodevelopers?
+    - infodevelopers? what is this?
+    - can you tell what infodevelopers?
+    - Tell me everything about infodevelopers
+    - say something about this company
+- intent: contact_info
+  examples: |
+    - Give the Contact information of Infodevelopers.
+    - Give the contact information of the comapany.
+    - How can I contact Infodevelopers?
+    - I need to make contact to Infodevelopers.
+    - What are the contact informations of the company?
+    - How do I make contact to the company?
+    - make contact
+    - contact information
+    - contact
+    - If I am to make a contact with the company, how should i?
+    - Give me the phone number of Infodevelopers.
+    - Phone number of the company.
+    - Give me the email of the company.
+    - give me the E-mail of Infodevelopers
+    - What is the website of Infodevelopers?
+    - How to contact the company?
+    - Is it possible to call Infodevelopers?
+    - Give me the details to contact Infodevelopers
+    - I want to contact your office
+    - contact office team
+    - Phone number of the company
+    - contact office
+    - I wish to contact infodev
+    - I want to contact this company.
+    - share me your contact details
+- intent: products_offered_by_infodev
+  examples: |
+    - What are the products offered by InfoDevelopers?
+    - Would you tell me what are the products offered by InfoDevelopers is?
+    - Would you explain me what are the products offered by infoDevelopers?
+    - Hey there, what are the products offered by InfoDevelopers?
+    - about the products offered by InfoDevelopers
+    - Hmm, the products offered by InfoDevelopers are what?
+    - Explain the products offered by InfoDevelopers.
+    - tell something about the products offered by InfoDevelopers
+    - the products offered by InfoDevelopers
+    - Is it possible to tell me about are the products offered by InfoDevelopers?
+    - softwares of info developers
+    - what software has been created by info
+    - what are your softwares
+    - What are the services offered by this company?
+    - What services do you offer?
+    - your services
+    - list of services that you provide
+    - What are the services the client can get from infodevelopers?
+    - What are the services the client can get from the infodev?
+    - I want to know what services infodevelopers offer to its clients?
+    - what are the products your provide
+    - products
+- intent: about_products
+  examples: |
+    - what is [mDabali]{"entity": "products", "value": "mdabali"}
+    - what is [mdabali](products)
+    - Please tell me about [Mdabali]{"entity": "products", "value": "mdabali"}
+    - i want to know about [infinity](products)
+    - hi. please tell us about [Infinity]{"entity": "products", "value": "infinity"}
+    - describe me about [empower](products)
+    - hey. can i get some information on [Empower]{"entity": "products", "value": "empower"}
+    - tell me about the product [wealth](products)
+    - what is [wealth](products)
+    - description of [Wealth]{"entity": "products", "value": "wealth"}
+    - hello. what is [budget management system](products)
+    - i would like to know about [Budget Management System]{"entity": "products", "value": "budget management system"}
+    - hey buddy. what is a [BMS]{"entity": "products", "value": "budget management system"}
+    - what is [online recruitment management system](products)
+    - define [Online recruitment Management System]{"entity": "products", "value": "online recruitment management system"}
+    - i would like to know about [e-reconciliation system](products)
+    - what do you mean by [E-Reconciliation System]{"entity": "products", "value": "e-reconciliation system"}
+    - what does [human resource information system](products) mean?
+    - would you tell me what a [Human Resource Information System]{"entity": "products", "value": "human resource information system"} is
+    - what does [HRIS]{"entity": "products", "value": "human resource information system"} define
+    - can you tell me what a [chatbot](products) means
+    - i want to know about the software [Chatbot]{"entity": "products", "value": "chatbot"}
+    - tell me about one of your product [face based attendance system](products)
+    - can i get more on [Face Based Attendance System]{"entity": "products", "value": "face based attendance system"}
+    - hey buddy. help me with the information on [any branch banking system](features)
+    - share your information on [ABBS]{"entity": "features", "value": "any branch banking system"}
+    - define [Any Branch Banking System]{"entity": "features", "value": "any branch banking system"}
+    - what is [inter branch transaction](features)
+    - i want to know about [IBT]{"entity": "features", "value": "inter branch transaction"}
+    - what is an [Inter Branch Transaction]{"entity": "features", "value": "inter branch transaction"}. i want to know about it.
+    - i have some doubts of [bank gl code](features). Can you say what that is and what is it used for?
+    - i have a question on [Bank GL Code]{"entity": "features", "value": "bank gl code"}
+    - give your knowledge on [sub ledger](features)
+    - can you tell me what a [Sub Ledger]{"entity": "features", "value": "sub ledger"} is and what is it used for?
+    - what does an [account group code](features) mean?
+    - i dont know what is an [account group code](feature). can you explain it to me with examples
+    - explain to me what a [in transit gl](features) is. Give an example too.
+    - what is an [In Transit GL]{"entity": "features", "value": "in transit gl"}
+    - what is [operation code](features) in teller transaction
+    - i would like to know about [Operation Code]{"entity": "features", "value": "operation code"}
+    - what does [operation code](features) means?
+    - hi. explain me about [pinned message](features)
+    - what is [pinned message](features) and how to compose it?
+    - can i get information on what [Pinned Message]{"entity": "features", "value": "pinned message"} is and how it can be composed?
+    - what is a [sub ledger](features)
+    - hey buddy, would you mind telling me what a [any branch banking system](features) is?
+- intent: career_info
+  examples: |
+    - are there any jobs available
+    - do you have vacancies
+    - job vacancy in infodevelopers
+    - hi. can i get a job in this company
+    - what vacancy do you have right now
+- intent: office_hours
+  examples: |
+    - what are the office hours
+    - office hours of info developers
+    - hello sir. what is your office time?
+    - working hours in info
+    - what are your office time
+- intent: create_bank_account
+  examples: |
+    - from where can i create bank a/c
+    - create a bank account
+    - process to create bank account
+    - hi. can i know the steps for creating a bank account
+    - i want to create a bank account. how to do it?
+    - open a new bank account
+    - procedure for opening a new bank account
+    - hey. can you help me in creating bank a/c
+    - i dont know how to create a bank account. help me.
+- intent: add_user_right_cbs
+  examples: |
+    - how to add more rights in CBS
+    - how can i add extra rights in a cbs
+    - adding extra rights in cbs
+    - create extra rights in the CBS
+    - help me in adding rights in cbs
+    - hey. i dont know the steps to add user right in cbs
+    - add more rights in cbs
+- intent: set_holidays
+  examples: |
+    - how to set holidays
+    - what is the process to set new holidays
+    - i want to set a holiday. how can i do it
+    - help me with setting new holidays
+    - i dont know the process to set holidays
+    - hey, i have a problem with setting holidays
+- intent: create_general_ledger
+  examples: |
+    - can i create  general ledger
+    - how to create a general ledger
+    - from where do i make a new general ledger
+    - i dont know how to create a general ledger
+- intent: set_message_about_customer
+  examples: |
+    - can i set message about customer
+    - how can i set messages about the customers
+    - process to set messages for the customers
+    - i want to set some messages for our customer. from where to do it
+    - set messages for customer
+- intent: find_user_list
+  examples: |
+    - from where i can find all user list
+    - how can i get the list of all the user
+    - help me to get the user lists
+    - hi. i want to get the user list
+    - how to get the user list
+- intent: set_teller_right_user
+  examples: |
+    - how to set teller right for user
+    - help tp met set the teller right for the user
+    - teller right for user
+    - hi. can i set the teller right for some specific users?
+    - what is the process to set teller right
+- intent: provide_salary_head_office
+  examples: |
+    - how can i provide salary through head office
+    - i want to provide salary from the head office. how to do it?
+    - hi. can i issue salary form the head office?
+    - what is the process of giving salary from the head office
+    - from the head office, can i give the salary?
+- intent: transfer_cash_within_branch
+  examples: |
+    - how can i transfer cash from one branch to another branch
+    - what are the process for transfering money within the branch
+    - hi. can i know the steps for transfering cash from one branch to the next one?
+    - i have a problem in transfering money in between the branch
+    - i would like to know how to send money within the branches of the bank
+    - send money from one branch to the other
+- intent: create_new_bank
+  examples: |
+    - how to create a new bank in the system
+    - create a new bank
+    - what is the process of creating a new bank from the system
+    - help me to create a new bank in the system
+    - in the system, i want to create a new bank
+    - hey, help me with creating a new bank
+    - would you mind telling me how to create a new bank
+- intent: allow_disallow_gl_free_entry
+  examples: |
+    - how to allow and disallow financial GL for free entry
+    - can you explain how can i allow the financial GL for free entry
+    - i want to know how to disallow financial GL for free entry
+    - allow financial gl free entry
+    - disallow financial gl free entry
+    - hi there. help me to allow financial gl free entry
+- intent: allow_disallow_gl_from_transaction
+  examples: |
+    - how to allow and disallow financial GL from transaction
+    - can you explain how can i allow the financial GL from transactions
+    - i want to know how to disallow financial GL from transactions
+    - allow financial gl transaction
+    - disallow financial gl transaction
+    - help me to disallow the financial gl transaction
+- intent: allow_disallow_gl_product_branch
+  examples: |
+    - how to allow and disallow any gl and product in a branch
+    - can you explain how can i allow the GL and product in a branch
+    - i want to know how to disallow GL product in a branch
+    - allow gl and product in a branch
+    - disallow gl and product in a branch
+    - disallow the gl and product in the branch
+- intent: teller_head_teller_vault_set_cbs
+  examples: |
+    - how are teller, heade teller and vault set in CBS
+    - i have a question. can u say how is the teller, vault and head teller set in the cbs?
+    - set teller in cbs
+    - set head teller in cbs
+    - set vault in cbs
+    - hi buddy. would you mind helping me to set the teller, head teller and vault in the cbs
+- intent: difference_teller_head_teller
+  examples: |
+    - what is the difference between teller and head teller
+    - differences betweeh head teller and teller
+    - are there any dissimilarity between the teller and head teller
+    - i want to know if there is any kind of difference within teller and head teller
+    - hi, can i get the difference between teller and head teller
+- intent: can_currency_be_blocked
+  examples: |
+    - can a currency be blocked from transaction
+    - i want to know if we can block currency from a transaction
+    - block a currency from transaction
+    - hi. help me with blocking a currency from a transaction
+    - hi. show me the process to block the currency from transaction
+- intent: loan_repayment_multiple_deposit_ac_possible
+  examples: |
+    - is it possible to repay loan repayment thorugh multiple deposit a/c
+    - can i repay the loan from multiple deposit account?
+    - hey. i would like to know, if the loan can be repaid from many deposit accounts
+    - can i repay the loan from multiple accounts?
+- intent: is_abbs_possible_in_teller
+  examples: |
+    - is ABBS transaction possible in teller transaction
+    - i want to know if the ABBS can be done in the teller transaction
+    - in the teller transaction, is the ABBS possible?
+    - is abbs transaction possible in teller
+- intent: nlu_fallback
+  examples: |
+    - qqqqq
+    - qqqqqq
+- synonym: mdabali
+  examples: |
+    - mDabali
+    - Mdabali
+- synonym: infinity
+  examples: |
+    - Infinity
+- synonym: empower
+  examples: |
+    - Empower
+- synonym: wealth
+  examples: |
+    - Wealth
+- synonym: budget management system
+  examples: |
+    - Budget Management System
+    - BMS
+- synonym: online recruitment management system
+  examples: |
+    - Online recruitment Management System
+    - Online Recruitment Management System
+- synonym: e-reconciliation system
+  examples: |
+    - E-Reconciliation System
+- synonym: human resource information system
+  examples: |
+    - Human Resource Information System
+    - HRIS
+- synonym: chatbot
+  examples: |
+    - Chatbot
+- synonym: face based attendance system
+  examples: |
+    - Face Based Attendance System
+- synonym: any branch banking system
+  examples: |
+    - ABBS
+    - Any Branch Banking System
+- synonym: inter branch transaction
+  examples: |
+    - IBT
+    - Inter Branch Transaction
+- synonym: bank gl code
+  examples: |
+    - Bank GL Code
+- synonym: sub ledger
+  examples: |
+    - Sub Ledger
+- synonym: in transit gl
+  examples: |
+    - In Transit GL
+- synonym: operation code
+  examples: |
+    - Operation Code
+- synonym: pinned message
+  examples: |
+    - Pinned Message
+- synonym: account group code
+  examples: |
+    - Account Group Code

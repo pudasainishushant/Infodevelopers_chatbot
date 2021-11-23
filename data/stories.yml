@@ -1,0 +1,197 @@
+version: "2.0"
+
+stories:
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: interactive_story_2
+  steps:
+  - intent: after_greet
+  - action: utter_after_greet
+
+- story: interactive_story_3
+  steps:
+  - intent: about_this_chatbot
+  - action: utter_about_this_chatbot
+
+- story: interactive_story_4
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_5
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: interactive_story_5
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - intent: out_of_scope
+  - action: utter_out_of_scope_2
+
+- story: interactive_story_6
+  steps:
+  - intent: about_infodev
+  - action: utter_about_infodev
+
+- story: interactive_story_7
+  steps:
+  - intent: contact_info
+  - action: utter_contact_info
+
+- story: interactive_story_8
+  steps:
+  - intent: career_info
+  - action: utter_career_info
+
+- story: interactive_story_9
+  steps:
+  - intent: office_hours
+  - action: utter_office_hours
+
+- story: interactive_story_10
+  steps:
+  - intent: nlu_fallback
+  - action: utter_out_of_scope
+
+- story: interactive_story_1
+  steps:
+  - intent: about_products
+    entities:
+    - products: mdabali
+  - slot_was_set:
+    - products: mdabali
+  - action: action_products
+
+- story: interactive_story_1
+  steps:
+  - intent: products_offered_by_infodev
+  - action: utter_products_offered_by_infodev
+  - intent: about_products
+    entities:
+    - products: wealth
+  - slot_was_set:
+    - products: wealth
+  - action: action_products
+
+- story: interactive_story_1
+  steps:
+  - intent: products_offered_by_infodev
+  - action: utter_products_offered_by_infodev
+
+- story: interactive_story_1
+  steps:
+  - intent: create_bank_account
+  - action: utter_create_bank_account
+
+- story: interactive_story_2
+  steps:
+  - intent: add_user_right_cbs
+  - action: utter_add_user_right_cbs
+
+- story: interactive_story_3
+  steps:
+  - intent: set_holidays
+  - action: utter_set_holidays
+
+- story: interactive_story_4
+  steps:
+  - intent: create_general_ledger
+  - action: utter_create_general_ledger
+
+- story: interactive_story_5
+  steps:
+  - intent: set_message_about_customer
+  - action: utter_set_message_about_customer
+
+- story: interactive_story_6
+  steps:
+  - intent: find_user_list
+  - action: utter_find_user_list
+
+- story: interactive_story_7
+  steps:
+  - intent: set_teller_right_user
+  - action: utter_set_teller_right_user
+
+- story: interactive_story_8
+  steps:
+  - intent: provide_salary_head_office
+  - action: utter_provide_salary_head_office
+
+- story: interactive_story_9
+  steps:
+  - intent: transfer_cash_within_branch
+  - action: utter_transfer_cash_within_branch
+
+- story: interactive_story_11
+  steps:
+  - intent: allow_disallow_gl_free_entry
+  - action: utter_allow_disallow_gl_free_entry
+
+- story: interactive_story_12
+  steps:
+  - intent: allow_disallow_gl_from_transaction
+  - action: utter_allow_disallow_gl_from_transaction
+
+- story: interactive_story_13
+  steps:
+  - intent: allow_disallow_gl_product_branch
+  - action: utter_allow_disallow_gl_product_branch
+
+- story: interactive_story_14
+  steps:
+  - intent: teller_head_teller_vault_set_cbs
+  - action: utter_teller_head_teller_vault_set_cbs
+
+- story: interactive_story_15
+  steps:
+  - intent: difference_teller_head_teller
+  - action: utter_difference_teller_head_teller
+
+- story: interactive_story_16
+  steps:
+  - intent: can_currency_be_blocked
+  - action: utter_can_currency_be_blocked
+
+- story: interactive_story_17
+  steps:
+  - intent: loan_repayment_multiple_deposit_ac_possible
+  - action: utter_loan_repayment_multiple_deposit_ac_possible
+
+- story: interactive_story_18
+  steps:
+  - intent: is_abbs_possible_in_teller
+  - action: utter_is_abbs_possible_in_teller
+
+- story: interactive_story_1
+  steps:
+  - intent: create_new_bank
+  - action: utter_create_new_bank
+
+- story: interactive_story_2
+  steps:
+  - intent: about_products
+    entities:
+    - features: sub ledger
+  - slot_was_set:
+    - features: sub ledger
+  - action: action_products
+
+- story: interactive_story_3
+  steps:
+  - intent: about_products
+    entities:
+    - features: any branch banking system
+  - slot_was_set:
+    - features: any branch banking system
+  - action: action_products
+
+- story: interactive_story_16
+  steps:
+  - intent: thank_you
+  - action: utter_thank_you

@@ -1,0 +1,265 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- create_new_bank:
+    use_entities: true
+- about_products:
+    use_entities: true
+- can_currency_be_blocked:
+    use_entities: true
+- allow_disallow_gl_product_branch:
+    use_entities: true
+- allow_disallow_gl_free_entry:
+    use_entities: true
+- loan_repayment_multiple_deposit_ac_possible:
+    use_entities: true
+- is_abbs_possible_in_teller:
+    use_entities: true
+- find_user_list:
+    use_entities: true
+- teller_head_teller_vault_set_cbs:
+    use_entities: true
+- add_user_right_cbs:
+    use_entities: true
+- difference_teller_head_teller:
+    use_entities: true
+- set_teller_right_user:
+    use_entities: true
+- create_general_ledger:
+    use_entities: true
+- set_message_about_customer:
+    use_entities: true
+- set_holidays:
+    use_entities: true
+- create_bank_account:
+    use_entities: true
+- allow_disallow_gl_from_transaction:
+    use_entities: true
+- products_offered_by_infodev:
+    use_entities: true
+- contact_info:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- about_chatbot:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- greet:
+    use_entities: true
+- about_infodev:
+    use_entities: true
+- after_greet:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- career_info:
+    use_entities: true
+- office_hours:
+    use_entities: true
+- provide_salary_head_office:
+    use_entities: true
+- transfer_cash_within_branch:
+    use_entities: true
+- thank_you:
+    use_entities: true
+- about_this_chatbot:
+    use_entities: true
+entities:
+- features
+- products
+- feature
+slots:
+  products:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - empower
+    - infinity
+    - branchless banking
+    - wealth
+    - budget management system
+    - online recruitment management system
+    - e-reconciliation system
+    - human resource information system
+    - chatbot
+    - face based attendance system
+    - 3d maps and visualization
+    - recommendation engine
+  features:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - any branch banking system
+    - inter branch transaction
+    - bank gl code
+    - sub ledger
+    - account group code
+    - in transit gl
+    - operation code
+    - pinned message
+responses:
+  utter_greet:
+  - text: Hello! I am a chatbot. I can try and answer some of your questions. How can I help you?
+  utter_after_greet:
+  - text: I am fine. 😁 How can we help you?
+  - text: I am doing very well. How can we assist you?😁
+  utter_about_this_chatbot:
+  - text: I am your virtual assistant from infodev to help you through your questions concerning us and our company.👋😃
+  - text: 😁 I am here to guide you through your queries regarding infodev.
+  utter_thank_you:
+  - text: I am very greatful to be at your service. 😁
+  utter_goodbye:
+  - text: Thank you, 😁 I am happy to help you. 👋
+  - text: I hope I was helpful for you. 👋😁
+  utter_about_infodev:
+  - text: AN ISO certified company working with the goal to provide best IT solution in all the possible sector.
+  utter_products_offered_by_infodev:
+  - buttons:
+    - payload: what is empower
+      title: Empower
+    - payload: what is infinity
+      title: Infinity
+    - payload: what is branchless banking
+      title: Branchless Banking
+    - payload: what is wealth
+      title: Wealth
+    - payload: what is budget management system
+      title: Budget Management System
+    - payload: what is online recruitment management system
+      title: Online Recruitment Management System
+    - payload: what is e-reconciliation system
+      title: E-Reconciliation System
+    - payload: what is human resource information system
+      title: Human Resource Information System
+    - payload: what is chatbot
+      title: Chatbot
+    - payload: what is face based attendance system
+      title: Face-based Attendance System
+    - payload: what is 3d maps and visualization
+      title: 3D Maps and Visualization
+    - payload: what is recommendation engine
+      title: Recommendation Engine
+    text: 'These are the products offered by InfoDevelopers: '
+  utter_career_info:
+  - text: Learn about current vacancies at infodevelopers at https://infodev.com.np/careers
+  utter_contact_info:
+  - text: 'Our contact information are: <br>Office: +977-1-5970063, +977-1-5970063 <br>Sales & Marketing: +977-1-5970062, +977-1-5970062 <br>Support: +977-1-5970061, +977-1-5970061'
+  utter_office_hours:
+  - text: 'Our office hours are: <br>Monday to Friday <br>Summer Season (9:00 AM - 6:00 PM) <br>Winter Season (15th Kartik to 15th Magh) (9:00 AM - 5:00 PM)'
+  utter_about_mdabali:
+  - text: mDabali is a Mobile Banking Platform developed by InfoDevelopers. This mobile app can be used by the customers of cooperatives and microfinance institutions. It provides a complete mobile banking and payment solutions. Get more information here https://infodev.com.np/fintech/12/mdabali.
+  utter_about_empower:
+  - text: EMPOWER is an internationally recognized core banking system used for Microfinance Banking. With the advent of Empower, a Microfinance can seamlessly operate its banking operation without any hassle and compromise. Learn more at https://infodev.com.np/fintech/10/empower
+  utter_about_wealth:
+  - text: "'WEALTH' is a generic and highly parameterized software solution which is a 'must have' tool for Merchant Banks and Portfolio Managers', developed by Infodevelopers Pvt. Ltd. It automates the overall portfolio transactions and at the same time, provides the in-depth portfolio analysis power. Learn  more here: https://infodev.com.np/fintech/14/wealth"
+  utter_about_infinity:
+  - text: Infinity is a top-notch Core Banking System for cooperatives. Built on the latest technology platform, the system offers unparalleled scalability and security including mobile banking platform facility. The system has been stress-tested to meet higher volume of transaction processing requirement of our customers. Learn more at https://infodev.com.np/fintech/11/infinity
+  utter_about_budget_management_system:
+  - text: The Budget Management System (BMS) by InfoDevelopers aims to automate the entire processes of the budget management life cycle of an institution. This system helps companies in combine budgeting, strategic planning, and rolling forecasts while consolidating projects/companies and business departments within one comprehensive corporate performance management platform. Learn more at https://infodev.com.np/enterprise/bms
+  utter_about_online_recruitment_system:
+  - text: Through this Online Recruitment Management System, employers can reach larger number of potential employees. Employers can also post job vacancies and jobseekers can apply for the available vacant job positions. Similarly, the system also allows the employers to accept applications from the applicants, verify the application, generate the admit card for the exam, send interview schedules and publish results in different stages of the selection till the final selection of the candidates. Learn more at https://infodev.com.np/enterprise/orms
+  utter_about_e_reconciliation_system:
+  - text: e-Reconciliation system by InfoDevelopers is designed and developed to automate reconciliation of the financial transactions originating from different sources like ATM Terminal, POS, CBS, Switch, etc. This e-Reconciliation System provides full set of reconciliation capabilities and helps not only banks, but different financial services firms to meet their imperatives. Its functional components provide adequate and strong control points allowing greater visibility into transaction and exception handling processes. Learn more at https://infodev.com.np/enterprise/reconciliation
+  utter_about_human_resource_information_system:
+  - text: Human Resource Information System (HRIS) by InfoDevelopers aims to simplify and better manage the tasks of the HRD in an organization. With this human resource information system, organizations can enjoy a centralized platform for various HR functions like employee information, recruitment processes, attendance, payroll, employee benefits, etc. Learn more at https://infodev.com.np/enterprise/hris
+  utter_about_chatbot_software:
+  - text: It is a software application used to conduct human conversation through voice commands or text chats or both. This is an AI feature which can be used through any major messaging applications. For demo on chatbot, please visit https://infodev.com.np/future-tech-inner or contact us here https://infodev.com.np/contact
+  utter_about_face_attendance_system:
+  - text: It is a computer vision application in collaboration with mobile for recognizing faces of employees. This system consists of a database which stores the attendance of each individual. For demo on face-based attendance system, please visit https://infodev.com.np/future-tech-inner or contact us here https://infodev.com.np/contact
+  utter_out_of_scope:
+  - text: I’m sorry. I don’t have an answer for this. Please try again with just keywords to see if I can find something.
+  utter_out_of_scope_2:
+  - text: Sorry, but we could not understand you. We will connect you to our support team now.
+  utter_create_bank_account:
+  - text: Follow the given steps to create a bank account - <br>Step-1 Bank Information Maintenance - 01011 (Bank Information) <br>Step-2 Bank A/C Information Maintenance - 11367 (Bank a/c Information) <br>Step-3 Chart of Account - 01003 (Bank ledger in system)
+  utter_add_user_right_cbs:
+  - text: User rights can set through User Group Menu Rights Maintenance -11044. You need to select user group, menu type and select menu for more right and provide privilege too
+  utter_set_holidays:
+  - text: You can set holidays from Calendar Maintenance -11072 by selecting date.
+  utter_create_general_ledger:
+  - text: You can create general ledger through Chart of Account - 01003.
+  utter_set_message_about_customer:
+  - text: You can set message about customer from Message Pinning-12301 which is popup at Teller Transaction Maintenance - 02101.
+  utter_find_user_list:
+  - text: You can get user list from the User List Report - 12195
+  utter_set_teller_right_user:
+  - text: You can set Teller Right user from Teller Setup Maintenance-11022.
+  utter_provide_salary_head_office:
+  - text: Follow the given steps - <br>Step-1 Employee Salary Head Maintenance - 11394 <br>Step-2 Employee Salary Distribution Maintenance-11384 <br>Step-3 Global Parameter Setup-11111 Where CENTRALIZE_PAYROLL should make Yes and Update <br>Step-4 Employee Batch Payment Transaction -12338
+  utter_about_any_branch_banking_system:
+  - text: ABBS stands for Any Branch Banking System. When a customer of one branch deposits amount or withdraws amount from another branch it is called ABBS transaction. ABBS transaction involves customer accounts transaction only.
+  utter_about_inter_branch_transaction:
+  - text: IBT stands for Inter Branch Transaction. When a branch performs a transaction against another branch, it is called IBT transaction. IBT transaction does not involve customer accounts.
+  utter_transfer_cash_within_branch:
+  - text: When one branch transfer cash to another branch, the initiating branch books transferred amount in In transit GL head. Upon receiving the required document by the destination branch, the destination branch originates the transaction which automatically creates the responding transaction.
+  utter_about_gl_code:
+  - text: When a new financial GL is created in the system, the system automatically creates GL code as integer data type. In addition to GL code, the system assigns GL code value to Bank GL Code. As and when required, user can change the Bank GL Code as per institution’s financial chart of account. In the system, Bank GL Code interacts with users instead of GL Code. <br>For example, during creating GL Deposit Interest payable, GL code assigned by the system is suppose 3030 which is also assigned to Bank GL Code. But the user can change Bank GL Code with value 12-12-12 as required.
+  utter_about_sub_ledger:
+  - text: Sometimes, user may need to maintain transactional ledger of some entities like contractors, vendors, workers separately as done with loan and deposit accounts. Maintaining financial GLs for each such entities is not possible which increases no. financial GLs creating load in financial chart of accounts. Sub ledger is used to maintain such entities. <br>For using sub ledger, one financial GL in chart of accounts should be created with CONTROL = YES and LEDGER = YES parameters. GL with such parameters allows to create accounts under the GL. <br>During transaction entry for sub ledger, user should enter Account number. Without entering account no, the system does not allow transaction.
+  utter_create_new_bank:
+  - text: When a bank decides to deal with new bank, user should create it in the system. User uses the screen code (01011) to create new bank.
+  utter_about_account_group_code:
+  - text: 'Account Group Code is the code which defines both product like deposit product, loan product and financial GL head group depending upon situation. <br>Financial GL Group: It represents financial GL Group when AC_TYPE=’FINANCIAL’ and Summation A/C= ‘NO’. <br>Product: When AC_TYPE=’DEPOSIT’ then product is deposit and when ‘LOAN’ then the product is loan. AC_TYPE_SUB_TYPE further defines sub groups under AC_TYPE. <br>Relation between AC_TYPE and GL_TYPE: GL_TYPE defines types of AC_TYPE. For example, Liability represents Deposit while Assets represents Loan'
+  utter_about_transit_gl:
+  - text: Any GL head which is used to hold amount temporarily and will to transferred to destination following its acknowledgement by destination branch is called In Transit GL. <br>For example - when branch 001 sends cash to branch 002, branch 001 creates transaction encompassing cash decrement with holding the equivalent cash amount in In Transit GL head.
+  utter_allow_disallow_gl_free_entry:
+  - text: Allowing and disallowing financial GL in free entry session can be set in Chart of Account (01003).
+  utter_allow_disallow_gl_from_transaction:
+  - text: Allowing and disallowing a financial GL in transaction can be set in Chart of Account (01003).
+  utter_allow_disallow_gl_product_branch:
+  - text: By default, all the products and GL heads are available to all the branches. But CBS has provision to allow and disallow a product and financial GL in a branch. User can exclude any financial GL or product from a branch based on requirement. User should use (11188) screen to exclude and include any financial GL and loan or deposit product.
+  utter_teller_head_teller_vault_set_cbs:
+  - text: Teller, Head teller and Vault GLs are set in currency table. GLs for teller, head teller and vault are set for each currency. These setting is done through the screen Currency Maintenance (01013).
+  utter_difference_teller_head_teller:
+  - text: A single user can be assigned as teller and head teller. Teller does transaction with customers in teller while head teller performs transaction between teller and vault. <br>Head teller withdraws cash from vault and distributes to teller and at the end of the day, head teller collects cash from tellers and deposits in vault. <br>Cash is kept in vault segregating in currency basis with proper denomination. Likewise, transaction between teller and head teller is done specifying currency and denomination. Transaction transferring cash from vault to head teller with proper denomination.
+  utter_can_currency_be_blocked:
+  - text: Yes. Any currency can be blocked from transaction by setting Transaction Allowed to true/false.
+  utter_loan_repayment_multiple_deposit_ac_possible:
+  - text: Yes. It is possible to repay a loan account through multiple deposit accounts of the same customer.  It is a process run by user in the central office. This process repays a loan account through the multiple deposit accounts of the same customer and the deposit products qualified for this process are saving and current typed deposits only. Recurring and fixed typed deposit products are not eligible for this process. <br>The central process sequentially processes each branches for the loan repayment. The following screen is used to select deposit products to be included for the process.
+  utter_about_operation_code:
+  - text: Operation code defines types of transaction allowed in the teller transaction. Following are the operation codes available in the system. <br>Cash Deposit <br>Cheque Withdrawal <br>Withdrawal Slip <br>Withdrawal Payment Through Bank <br>Other Bank Deposit Voucher <br>Journal Deposit <br>Journal Withdrawal <br>Deposit from Saving
+  utter_is_abbs_possible_in_teller:
+  - text: Yes. ABBS is possible in teller transaction.
+  utter_about_pinned_message:
+  - text: Pre composed message which can be displayed during transaction is called pinned message. It is composed through Message Pinning (12301). <br>Following are to be considered in the context of message pinning <br>Message can be pinned to customer/Agent/Loan/Deposit. It is called message owner type <br>It can be set to display for specified period of period (from date to date) <br>Message can be recorded in English or Nepalese font. <br>Multiple message can be set for owner no. for specified period
+actions:
+- action_products
+- utter_about_chatbot
+- utter_about_infodev
+- utter_add_user_right_cbs
+- utter_after_greet
+- utter_allow_disallow_gl_free_entry
+- utter_allow_disallow_gl_from_transaction
+- utter_allow_disallow_gl_product_branch
+- utter_can_currency_be_blocked
+- utter_career_info
+- utter_contact_info
+- utter_create_bank_account
+- utter_create_general_ledger
+- utter_create_new_bank
+- utter_difference_teller_head_teller
+- utter_find_user_list
+- utter_goodbye
+- utter_greet
+- utter_is_abbs_possible_in_teller
+- utter_loan_repayment_multiple_deposit_ac_possible
+- utter_office_hours
+- utter_out_of_scope
+- utter_products_offered_by_infodev
+- utter_provide_salary_head_office
+- utter_set_holidays
+- utter_set_message_about_customer
+- utter_set_teller_right_user
+- utter_teller_head_teller_vault_set_cbs
+- utter_transfer_cash_within_branch
+forms: {}
+e2e_actions: []
